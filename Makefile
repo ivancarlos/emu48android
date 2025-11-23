@@ -1,3 +1,4 @@
+NAME            := Emu48-v3.0
 # ----------  CONFIGURAÇÕES ----------
 MY_GRADLE_LOCAL ?= /opt/gradle/gradle-8.10.2/bin/gradle
 SDK             ?= $(HOME)/Android/Sdk
@@ -5,8 +6,8 @@ VERSION         ?= 36.1.0                       # build-tools a usar
 GRADLE          := ./gradlew
 AAPT            := $(SDK)/build-tools/$(VERSION)/aapt
 
-apk_debug       := app/build/outputs/apk/debug/app-debug.apk
-apk_release     := app/build/outputs/apk/release/app-release-unsigned.apk
+apk_debug       := app/build/outputs/apk/debug/$(NAME)-debug.apk
+apk_release     := app/build/outputs/apk/release/$(NAME)-release-unsigned.apk
 APK             := $(apk_debug)
 
 # Avalia apenas quando o APK existe (evita erro em `make help`)
