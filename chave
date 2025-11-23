@@ -1,0 +1,15 @@
+# 1. Gerar o keystore (responda as perguntas ou use -dname)
+keytool -genkey -keystore ./keystore.jks \
+        -keyalg RSA -keysize 2048 -validity 9125 \
+        -alias key0 \
+        -storepass myPassword -keypass myPassword \
+        -dname "CN=My Name, OU=MyUnit, O=MyCompany, L=MyCity, S=MyState, C=BR"
+
+# 2. Criar o arquivo de propriedades
+cat > keystore.properties <<EOF
+storeFile=../keystore.jks
+storePassword=myPassword
+keyAlias=key0
+keyPassword=myPassword
+EOF
+
